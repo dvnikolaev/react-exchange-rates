@@ -1,0 +1,46 @@
+.page-main {
+  background-color: rgb(247,248,252);
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(12, calc((100% - 30px * 11) / 12));
+  grid-template-rows: 250px 150px 400px;
+  gap: 30px;
+}
+
+@media screen and (max-width: 1230px) {
+  .page-main {
+    grid-template-rows: 250px 150px 150px 300px
+  }
+}
+
+@media screen and (max-width: 1090px) {
+  .page-main {
+    padding: 10px;
+    gap: 20px;
+    grid-template-columns: repeat(12, calc((100% - 20px * 11) / 12));
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .page-main {
+    grid-template-rows: 250px 250px 150px 150px 300px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .page-main {
+    grid-template-rows: 150px 250px 150px 150px 300px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .page-main {
+    grid-template-rows: 150px 250px 150px 150px 300px 300px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .page-main {
+    grid-template-rows: 150px 250px repeat(4, 150px) repeat(2,300px);
+  }
+}
