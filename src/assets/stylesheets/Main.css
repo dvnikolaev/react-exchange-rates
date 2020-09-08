@@ -1,6 +1,6 @@
 .page-main {
   background-color: rgb(247,248,252);
-  padding: 30px;
+  padding: 10px;
   display: grid;
   grid-template-columns: repeat(12, calc((100% - 30px * 11) / 12));
   grid-template-rows: 250px 150px 400px;
