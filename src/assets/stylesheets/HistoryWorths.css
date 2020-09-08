@@ -1,0 +1,7 @@
+.history-worths {
+  grid-column: span 5;
+}
+.history__header {
+  margin: 0;
+  text-align: center;
+}
