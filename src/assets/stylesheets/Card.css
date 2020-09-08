@@ -1,0 +1,21 @@
+.card {
+  padding: 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  box-shadow: 0 0 5px 0 rgba(0,0,0,.3);
+}
+.card--light {
+  background-color: white;
+}
+.card--dark {
+  color: white;
+  background-color: #3c2946;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+}

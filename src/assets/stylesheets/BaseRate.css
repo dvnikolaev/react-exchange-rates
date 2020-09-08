@@ -1,0 +1,36 @@
+.card__base {
+  grid-column: span 2;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+}
+.base__value {
+  text-align: center;
+  font-size: 7rem;
+  font-weight: bold;
+  margin: auto;
+}
+
+.base__name {
+  margin: 0;
+}
+.base__subheader {
+  align-self: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 950px) {
+  .card__base {
+    grid-column: span 7;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .card__base {
+    grid-column: span 12;
+  }
+  .base__value {
+    font-size: 5rem;
+  }
+}
