@@ -1,6 +1,7 @@
 import { FETCH_RATES } from "../actions/types";
 
 const INITIAL_STATE = {
+  baseRate: 'USD',
   rates: [],
 };
 
