@@ -2,6 +2,7 @@ import { FETCH_RATES } from "../actions/types";
 
 const INITIAL_STATE = {
   baseRate: 'USD',
+  secondaryRates: ["RUB", "EUR", "CHF","JPY"],
   rates: [],
 };
 
@@ -11,7 +12,6 @@ export default (state = INITIAL_STATE, action) => {
       return { ...state, rates: action.payload };
     }
     default:
-      console.log(3231);
       return state;
   }
 };
