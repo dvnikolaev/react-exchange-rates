@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 
 import MonthsListItem from "./MonthsListItem";
 import { getMonthsName } from "../../../services/";
 
-const MonthList = () => {
-  const [activeMonth, setActiveMonth] = useState(3);
-
+const MonthList = ({ activeMonth, setActiveMonth }) => {
   const monthsNames = [
     getMonthsName(new Date().getMonth() - 4),
     getMonthsName(new Date().getMonth() - 3),
@@ -20,7 +18,7 @@ const MonthList = () => {
         key={name}
         index={index}
         activeMonth={activeMonth}
-        setActiveMonth={setActiveMonth}
+        setActiveMonth={(id) => setActiveMonth(id)}
       />
     );
   });
