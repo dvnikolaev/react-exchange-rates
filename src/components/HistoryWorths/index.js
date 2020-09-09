@@ -1,23 +1,32 @@
-import React from "react";
-import { connect } from 'react-redux';
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
 
-import "../../assets/stylesheets/HistoryWorths.css"
+import "../../assets/stylesheets/HistoryWorths.css";
+import { fetchHistoryWorths } from "../../store/actions";
 import Card from "../Card";
-import MonthsList from './MonthsList'
+import MonthsList from "./MonthsList";
+import RatesList from "./RatesList";
 
-const HistoryWorths = ({ baseRate }) => {
+const HistoryWorths = ({ baseRate, fetchHistoryWorths }) => {
+  const [activeMonth, setActiveMonth] = useState(3);
+
+  useEffect(() => {
+    fetchHistoryWorths(baseRate);
+  }, [baseRate]);
+
   return (
     <Card className="history-worths">
       <h2 className="history__header">Курс {baseRate} за предыдущие месяцы</h2>
-      <MonthsList />
+      <MonthsList activeMonth={activeMonth} setActiveMonth={setActiveMonth} />
+      <RatesList activeMonth={activeMonth} />
     </Card>
   );
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    baseRate: state.rates.baseRate
-  }
-}
+    baseRate: state.rates.baseRate,
+  };
+};
 
-export default connect(mapStateToProps)(HistoryWorths);
+export default connect(mapStateToProps, { fetchHistoryWorths })(HistoryWorths);
