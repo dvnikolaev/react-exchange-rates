@@ -1,1 +1,2 @@
 export const FETCH_RATES = "FETCH_RATES";
+export const FETCH_HISTORY_WORTHS = "FETC_HISTORY_WORTHS";
