@@ -5,3 +5,32 @@
   margin: 0;
   text-align: center;
 }
+.months-list {
+  display: flex;
+  margin: 10px auto;
+  width: max-content;
+  padding: 5px;
+  background-color: #e9e9e9;
+}
+.months-list__item {
+  list-style: none;
+}
+.months-list__item:not(:first-child) {
+  margin-left: 2px;
+}
+.months-list__button {
+  padding: 10px 15px;
+  text-transform: capitalize;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.months-list__button--active {
+  background-color: white;
+  text-shadow: 0 0 .45px #333, 0 0 .45px #333;
+}
+.months-list__button:not(.months-list__button--active):hover,
+.months-list__button:not(.months-list__button--active):focus {
+  background-color: rgb(255, 255, 255);
+}
