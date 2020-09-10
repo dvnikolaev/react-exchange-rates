@@ -1,11 +1,16 @@
-import { FETCH_RATES, FETCH_HISTORY_WORTHS } from "./types";
+import { FETCH_RATES, FETCH_HISTORY_WORTHS, SELECT_BASE_RATE } from "./types";
 import { getRatesForLastFourMonths } from "../../services";
+import axios from "axios";
 
-export const fetchRates = (id) => {
-  return {
+export const fetchRates = () => async (dispatch, getState) => {
+  const { data: { rates } } = await axios.get(
+    `https://api.exchangerate.host/latest?base=${getState().rates.baseRate}`
+  );
+
+  dispatch({
     type: FETCH_RATES,
-    payload: id,
-  };
+    payload: rates
+  })
 };
 
 export const fetchHistoryWorths = (baseRate) => async (dispatch) => {
@@ -16,3 +21,10 @@ export const fetchHistoryWorths = (baseRate) => async (dispatch) => {
     payload: historyWorths,
   });
 };
+
+export const selectBaseRate = (rate) => {
+  return {
+    type: SELECT_BASE_RATE,
+    payload: rate
+  }
+}
