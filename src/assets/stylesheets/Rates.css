@@ -10,7 +10,7 @@
   outline: none;
 }
 .rates__search:focus {
-  border: 2px solid #3C2946;
+  border: 2px solid #3c2946;
 }
 
 .rates-list {
@@ -37,4 +37,30 @@
 .rates-list__button:not(.rates-list__button--active):hover,
 .rates-list__button:not(.rates-list__button--active):focus {
   background-color: rgb(224, 224, 224);
+}
+
+@media screen and (max-width: 1230px) {
+  .rates {
+    grid-row: span 4;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .rates {
+    grid-row: 5;
+    grid-column: span 6;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .rates {
+    grid-row: 6;
+    grid-column: span 12;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .rates {
+    grid-row: 8;
+  }
 }
