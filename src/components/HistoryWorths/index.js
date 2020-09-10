@@ -15,7 +15,7 @@ const HistoryWorths = ({ baseRate, fetchHistoryWorths }) => {
   }, [baseRate]);
 
   return (
-    <Card className="history-worths">
+    <Card className="history-worths card--light">
       <h2 className="history__header">Курс {baseRate} за предыдущие месяцы</h2>
       <MonthsList activeMonth={activeMonth} setActiveMonth={setActiveMonth} />
       <RatesList activeMonth={activeMonth} />
