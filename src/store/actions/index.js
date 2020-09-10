@@ -1,4 +1,4 @@
-import { FETCH_RATES, FETCH_HISTORY_WORTHS, SELECT_BASE_RATE } from "./types";
+import { FETCH_RATES, FETCH_HISTORY_WORTHS, SELECT_BASE_RATE, SET_SECONDARY_RATES } from "./types";
 import { getRatesForLastFourMonths } from "../../services";
 import axios from "axios";
 
@@ -26,5 +26,12 @@ export const selectBaseRate = (rate) => {
   return {
     type: SELECT_BASE_RATE,
     payload: rate
+  }
+}
+
+export const setSecondaryRates = rates => {
+  return {
+    type: SET_SECONDARY_RATES,
+    payload: [...rates]
   }
 }
