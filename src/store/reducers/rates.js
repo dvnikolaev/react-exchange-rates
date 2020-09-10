@@ -2,6 +2,7 @@ import {
   FETCH_RATES,
   FETCH_HISTORY_WORTHS,
   SELECT_BASE_RATE,
+  SET_SECONDARY_RATES
 } from "../actions/types";
 
 const INITIAL_STATE = {
@@ -21,6 +22,9 @@ export default (state = INITIAL_STATE, action) => {
     }
     case SELECT_BASE_RATE: {
       return { ...state, baseRate: action.payload };
+    }
+    case SET_SECONDARY_RATES: {
+      return { ...state, secondaryRates: action.payload }
     }
     default:
       return state;
