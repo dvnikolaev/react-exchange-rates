@@ -1,7 +1,7 @@
 import React from "react";
 
-import MonthsListItem from "./MonthsListItem";
-import { getMonthsName } from "../../../services/";
+import MonthsListItem from "./months-list-item";
+import { getMonthsName } from "../../../services";
 
 const MonthList = ({ activeMonth, setActiveMonth }) => {
   const monthsNames = [

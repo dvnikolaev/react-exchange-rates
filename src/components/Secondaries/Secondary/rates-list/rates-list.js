@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import RatesListItem from "./RatesListItem";
+import RatesListItem from "./rates-list-item";
 
 const RatesList = ({ rate, rates, isShowList, setIsShowList, index }) => {
   if (!isShowList) {

@@ -1,8 +1,8 @@
 import React from "react";
 
-import "../../assets/stylesheets/BaseRate.css";
-import Card from "../Card";
-import Header from "./Header";
+import "./base-rate.css";
+import Card from "../../ui/Card/Card";
+import Header from "./base-rate-header";
 
 const BaseRate = () => {
   return (

@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from 'react-redux';
 
-import Card from "../Card";
-import Header from './Header';
+import Card from "../../../ui/Card/Card";
+import Header from './secondary-header';
 
 const Secondary = ({rate, index, value}) => {
   const renderValue = () => {

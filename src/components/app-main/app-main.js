@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 
-import "../assets/stylesheets/Main.css";
-import { fetchRates } from "../store/actions";
-import BaseRate from "./Base/BaseRate";
-import HistoryWorths from "./HistoryWorths";
-import Rates from "./Rates";
-import Secondaries from "./Secondaries";
+import "./app-main.css";
+import { fetchRates } from "../../store/actions";
+import BaseRate from "../base-rate/base-rate";
+import HistoryWorths from "../history-worths/history-worths";
+import Rates from "../all-currencies/all-currencies";
+import Secondaries from "../Secondaries/secondary-currencies";
 
 const Main = ({ fetchRates, baseRate }) => {
   useEffect(() => {

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import RatesList from "./RatesList";
+import RatesList from "./rates-list/rates-list";
 
 const Header = ({ rate, index }) => {
   const [isShowList, setIsShowList] = useState(false);

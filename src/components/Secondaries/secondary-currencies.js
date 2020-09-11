@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import "../../assets/stylesheets/Secondaries.css";
-import Secondary from "./Secondary";
+import "./Secondaries.css";
+import Secondary from "./Secondary/Secondary";
 
 const Secondaries = ({ secondaryRates }) => {
   const renderSecondary = secondaryRates.map((rate,index) => {

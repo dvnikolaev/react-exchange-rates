@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-import "../../assets/stylesheets/Rates.css";
-import Card from "../Card";
+import "./rates.css";
+import Card from "../../ui/Card/Card";
 import Search from "./Search";
-import RatesList from "./RatesList";
+import RatesList from "./rates-list/rates-list";
 
 const Rates = () => {
   const [searchValue, setSearchValue] = useState("");

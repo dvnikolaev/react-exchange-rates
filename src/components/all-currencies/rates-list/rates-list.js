@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import RatesListItem from "./RatesListItem";
+import RatesListItem from "./rate-list-item";
 
 const RatesList = ({ rates, searchValue }) => {
   const renderRatesListItem = Object.keys(rates)

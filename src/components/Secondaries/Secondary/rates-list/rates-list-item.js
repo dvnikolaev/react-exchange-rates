@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { setSecondaryRates } from "../../../store/actions";
+import { setSecondaryRates } from "../../../../store/actions";
 
 const RatesListItem = ({
   name,

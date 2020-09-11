@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../assets/stylesheets/Card.css";
+import "./Card.css";
 
 const Card = ({ className, children }) => {
   const renderClassName = className ? className : '';

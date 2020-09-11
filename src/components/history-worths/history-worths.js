@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 
-import "../../assets/stylesheets/HistoryWorths.css";
+import "./history-worths.css";
 import { fetchHistoryWorths } from "../../store/actions";
-import Card from "../Card";
-import MonthsList from "./MonthsList";
-import RatesList from "./RatesList";
+import Card from "../../ui/Card/Card";
+import MonthsList from "./months-list/months-list";
+import RatesList from "./rates-list/rates-list";
 
 const HistoryWorths = ({ baseRate, fetchHistoryWorths }) => {
   const [activeMonth, setActiveMonth] = useState(3);
