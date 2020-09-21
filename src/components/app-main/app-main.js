@@ -7,6 +7,7 @@ import BaseRate from "../base-rate/base-rate";
 import HistoryWorths from "../history-worths/history-worths";
 import Rates from "../all-currencies/all-currencies";
 import Secondaries from "../Secondaries/secondary-currencies";
+import Chart from "../app-chart/app-chart";
 
 const Main = ({ fetchRates, baseRate }) => {
   useEffect(() => {
@@ -19,6 +20,7 @@ const Main = ({ fetchRates, baseRate }) => {
       <HistoryWorths />
       <Rates />
       <Secondaries />
+      <Chart />
     </main>
   );
 };
