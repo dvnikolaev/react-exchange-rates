@@ -10,6 +10,7 @@ const Header = ({ rate, index }) => {
       <button
         className="secondary__button"
         onClick={() => setIsShowList(!isShowList)}
+        aria-label="show-rates-list"
       >
         <i className="fas fa-chevron-down"></i>
       </button>
