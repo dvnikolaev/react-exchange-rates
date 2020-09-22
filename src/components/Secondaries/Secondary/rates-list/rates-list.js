@@ -1,12 +1,18 @@
 import React from "react";
 import { connect } from "react-redux";
 
+import { useClickOutside } from '../../../../services/hooks';
 import RatesListItem from "./rates-list-item";
 
 const RatesList = ({ rate, rates, isShowList, setIsShowList, index }) => {
+  let domNode = useClickOutside(() => {
+    setIsShowList(false);
+  })
   if (!isShowList) {
     return null;
   }
+
+  
 
   const renderRatesListItem = rates.map((name) => {
     return (
@@ -18,7 +24,7 @@ const RatesList = ({ rate, rates, isShowList, setIsShowList, index }) => {
       />
     );
   });
-  return <ul className="secondary-list">{renderRatesListItem}</ul>;
+  return <ul className="secondary-list" ref={domNode}>{renderRatesListItem}</ul>;
 };
 
 const mapStateToProps = (state, ownProps) => {
