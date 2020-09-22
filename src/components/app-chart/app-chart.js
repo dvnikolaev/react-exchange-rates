@@ -4,6 +4,7 @@ import { Line } from "react-chartjs-2";
 
 import "./app-chart.css";
 import Card from "../../ui/Card/Card";
+import { getRatesFullCurrentMonth } from '../../services'
 
 const Chart = ({baseRate, secondaryRates}) => {
   const [dataChart, setDataChart] = useState({
@@ -14,7 +15,7 @@ const Chart = ({baseRate, secondaryRates}) => {
     ],
     datasets: [
       {
-        label: "My First dataset",
+        label: `${baseRate} / ${secondaryRates[0]}`,
         fill: false,
         lineTension: 0.1,
         backgroundColor: "rgba(75,192,192,0.4)",
@@ -32,10 +33,10 @@ const Chart = ({baseRate, secondaryRates}) => {
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 10,
-        data: [65, 59, 80, 81, 56, 55, 40],
+        data: [],
       },
       {
-        label: "My second dataset",
+        label: `${baseRate} / ${secondaryRates[1]}`,
         fill: false,
         lineTension: 0.1,
         backgroundColor: "rgba(192,75,192,0.4)",
@@ -53,10 +54,10 @@ const Chart = ({baseRate, secondaryRates}) => {
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 10,
-        data: [50, 44, 95, 60, 33, 20, 21],
+        data: [],
       },
       {
-        label: "My second dataset",
+        label: `${baseRate} / ${secondaryRates[2]}`,
         fill: false,
         lineTension: 0.1,
         backgroundColor: "rgba(22, 94, 226,0.4)",
@@ -74,10 +75,10 @@ const Chart = ({baseRate, secondaryRates}) => {
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 10,
-        data: [60, 24, 15, 60, 55, 30, 41],
+        data: [],
       },
       {
-        label: "My second dataset",
+        label: `${baseRate} / ${secondaryRates[3]}`,
         fill: false,
         lineTension: 0.1,
         backgroundColor: "rgba(250, 84, 23,0.4)",
@@ -95,19 +96,24 @@ const Chart = ({baseRate, secondaryRates}) => {
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 10,
-        data: [20, 34, 75, 40, 73, 10, 91],
+        data: [],
       },
     ],
   });
 
   useEffect(() => {
-    const firstRateData  = Object.assign({...dataChart.datasets[0], label: `${baseRate} / ${secondaryRates[0]}`});
-    const secondRateData = Object.assign({...dataChart.datasets[1], label: `${baseRate} / ${secondaryRates[1]}`});
-    const thirdRateData = Object.assign({...dataChart.datasets[2], label: `${baseRate} / ${secondaryRates[2]}`});
-    const fourRateData = Object.assign({...dataChart.datasets[3], label: `${baseRate} / ${secondaryRates[3]}`});
-    const datasum = [firstRateData,secondRateData,thirdRateData,fourRateData]
-    console.log(datasum);
-    setDataChart(Object.assign({...dataChart, datasets: datasum}))
+    const fetchRates = async () => {
+      const data = await getRatesFullCurrentMonth(baseRate, secondaryRates);
+      
+      const firstRateData  = Object.assign({...dataChart.datasets[0], label: `${baseRate} / ${secondaryRates[0]}`, data: data[0]});
+      const secondRateData = Object.assign({...dataChart.datasets[1], label: `${baseRate} / ${secondaryRates[1]}`, data: data[1]});
+      const thirdRateData = Object.assign({...dataChart.datasets[2], label: `${baseRate} / ${secondaryRates[2]}`, data: data[2]});
+      const fourRateData = Object.assign({...dataChart.datasets[3], label: `${baseRate} / ${secondaryRates[3]}`, data: data[3]});
+      const datasum = [firstRateData,secondRateData,thirdRateData,fourRateData]
+      setDataChart(Object.assign({...dataChart, datasets: datasum}))
+    }
+    fetchRates();
+
   }, [baseRate,secondaryRates]);
 
   return (
