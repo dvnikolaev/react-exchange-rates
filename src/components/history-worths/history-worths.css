@@ -60,3 +60,16 @@
     grid-column: span 12;
   }
 }
+
+@media screen and (max-width: 420px) {
+  .history__header {
+    font-size: 18px;
+  }
+  .months-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .history-list {
+    margin: 10px 0;
+  }
+}
