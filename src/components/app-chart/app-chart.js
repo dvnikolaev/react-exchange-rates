@@ -118,7 +118,7 @@ const Chart = ({baseRate, secondaryRates}) => {
 
   return (
     <Card className="chart card--light">
-      <Line data={dataChart} options={{ maintainAspectRatio: false }}/>
+      <Line data={dataChart} width={100} height={100} options={{ maintainAspectRatio: false }}/>
     </Card>
   );
 };
