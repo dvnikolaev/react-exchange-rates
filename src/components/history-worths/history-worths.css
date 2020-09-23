@@ -69,6 +69,12 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+  .months-list__item:not(:first-child) {
+    margin-left: 0;
+  }
+  .months-list__button {
+    width: 100%;
+  }
   .history-list {
     margin: 10px 0;
   }
