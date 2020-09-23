@@ -9,7 +9,7 @@
   grid-column: span 3;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  position: relative;
 }
 .secondary__header {
   margin: 0;
@@ -24,13 +24,17 @@
   font-size: 2.3rem;
 }
 .secondary-list {
+  top: -15px;
+  left: 0;
+  width: calc(100% - 10px);
+  height:100%;
+
   position: absolute;
   padding: 5px;
   background-color: white;
   display: flex;
   flex-direction: column;
   box-shadow: 0 0 5px rgba(0,0,0,.3);
-  width: 100px;
   max-height: 250px;
   overflow: auto;
 }
