@@ -8,7 +8,6 @@ export const useClickOutside = (handler) => {
      if (domNode.current && !domNode.current.contains(e.target)) {
         handler();
       }
-      console.log(domNode);
     }
 
 
